@@ -1,0 +1,36 @@
+/include/ "system-conf.dtsi"
+/ {
+	xadc@f8007100 {
+		compatible = "xlnx,zynq-xadc-1.00.a";
+		reg = <0xf8007100 0x20>;
+		interrupts = <0 7 4>; //SPI XADC ACTIVE-HIGH_LEVEL
+		interrupt-parent = <&intc>;
+		clocks = <&clkc 12>; //pcap
+
+		xlnx,channels {
+			#address-cells = <1>;
+			#size-cells = <0>;
+			channel@0 {
+				reg = <0>;
+			};
+			channel@12 {
+				reg = <12>;
+			};
+			channel@8 {
+				reg = <8>;
+			};
+			channel@9 {
+                                reg = <9>;
+                        };
+			channel@6 {
+                                reg = <6>;
+                        };
+			channel@15 {
+                                reg = <15>;
+                        };
+			channel@13 {
+                                reg = <13>;
+                        };
+		};
+	};
+};
