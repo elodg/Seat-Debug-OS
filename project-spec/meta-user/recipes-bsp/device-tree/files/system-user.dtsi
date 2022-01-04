@@ -1,6 +1,6 @@
 /include/ "system-conf.dtsi"
 / {
-	xadc@f8007100 {
+	/*xadc@f8007100 {
 		compatible = "xlnx,zynq-xadc-1.00.a";
 		reg = <0xf8007100 0x20>;
 		interrupts = <0 7 4>; //SPI XADC ACTIVE-HIGH_LEVEL
@@ -32,5 +32,33 @@
                                 reg = <13>;
                         };
 		};
-	};
+	};*/
+};
+
+&xadc_wiz_0 {
+	xlnx,channels {
+		#address-cells = <1>;
+		#size-cells = <0>;
+		channel@1 { //VAUX0
+			reg = <1>;
+                };
+		channel@13 {
+                        reg = <13>;
+                };
+                channel@9 {
+                        reg = <9>;
+                };
+                channel@10 {
+                        reg = <10>;
+                };
+                channel@7 {
+                        reg = <7>;
+                };
+                channel@16 {
+                        reg = <16>;
+                };
+                channel@14 {
+                        reg = <14>;
+                };
+        };
 };
